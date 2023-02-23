@@ -11,7 +11,7 @@ See `CircuitPython:board` in CircuitPython for more details.
 """
 
 
-__version__ = "0.0.0-auto.0"
+__version__ = "0.0.0+auto.0"
 __repo__ = "https://github.com/adafruit/Adafruit_Blinka.git"
 __blinka__ = True
 
@@ -121,8 +121,23 @@ elif board_id == ap_board.ORANGE_PI_ZERO_2:
 elif board_id == ap_board.ORANGE_PI_3:
     from adafruit_blinka.board.orangepi.orangepi3 import *
 
+elif board_id == ap_board.ORANGE_PI_4:
+    from adafruit_blinka.board.orangepi.orangepi4 import *
+
+elif board_id == ap_board.ORANGE_PI_4_LTS:
+    from adafruit_blinka.board.orangepi.orangepi4 import *
+
+elif board_id == ap_board.ORANGE_PI_5:
+    from adafruit_blinka.board.orangepi.orangepi5 import *
+
 elif board_id == ap_board.BANANA_PI_M2_ZERO:
     from adafruit_blinka.board.bananapi.bpim2zero import *
+
+elif board_id == ap_board.BANANA_PI_M2_PLUS:
+    from adafruit_blinka.board.bananapi.bpim2plus import *
+
+elif board_id == ap_board.BANANA_PI_M5:
+    from adafruit_blinka.board.bananapi.bpim5 import *
 
 elif board_id == ap_board.GIANT_BOARD:
     from adafruit_blinka.board.giantboard import *
@@ -145,6 +160,9 @@ elif board_id == ap_board.JETSON_NANO:
 elif board_id == ap_board.JETSON_NX:
     from adafruit_blinka.board.nvidia.jetson_nx import *
 
+elif board_id == ap_board.JETSON_AGX_ORIN:
+    from adafruit_blinka.board.nvidia.jetson_orin import *
+
 elif board_id == ap_board.CLARA_AGX_XAVIER:
     from adafruit_blinka.board.nvidia.clara_agx_xavier import *
 
@@ -162,6 +180,12 @@ elif board_id == ap_board.ODROID_C4:
 
 elif board_id == ap_board.ODROID_N2:
     from adafruit_blinka.board.hardkernel.odroidn2 import *
+
+elif board_id == ap_board.ODROID_M1:
+    from adafruit_blinka.board.hardkernel.odroidm1 import *
+
+elif board_id == ap_board.KHADAS_VIM3:
+    from adafruit_blinka.board.khadas.khadasvim3 import *
 
 elif board_id == ap_board.ODROID_XU4:
     from adafruit_blinka.board.hardkernel.odroidxu4 import *
@@ -202,17 +226,35 @@ elif board_id == ap_board.CLOCKWORK_CPI3:
 elif board_id == ap_board.ONION_OMEGA2:
     from adafruit_blinka.board.onion.omega2 import *
 
+elif board_id == ap_board.RADXA_CM3:
+    from adafruit_blinka.board.radxa.radxacm3 import *
+
+elif board_id == ap_board.ROCK_PI_3A:
+    from adafruit_blinka.board.radxa.rockpi3a import *
+
+elif board_id == ap_board.RADXA_ZERO:
+    from adafruit_blinka.board.radxa.radxazero import *
+
 elif board_id == ap_board.ROCK_PI_S:
     from adafruit_blinka.board.radxa.rockpis import *
 
 elif board_id == ap_board.ROCK_PI_4:
     from adafruit_blinka.board.radxa.rockpi4 import *
 
+elif board_id == ap_board.ROCK_PI_4_C_PLUS:
+    from adafruit_blinka.board.radxa.rockpi4cplus import *
+
+elif board_id == ap_board.ROCK_PI_5:
+    from adafruit_blinka.board.radxa.rock5 import *
+
 elif board_id == ap_board.ROCK_PI_E:
     from adafruit_blinka.board.radxa.rockpie import *
 
 elif board_id == ap_board.UDOO_X86:
     from adafruit_blinka.board.udoo_x86ultra import *
+
+elif board_id == ap_board.ODYSSEY_X86J41X5:
+    from adafruit_blinka.board.x86j41x5 import *
 
 elif board_id == ap_board.STM32MP157C_DK2:
     from adafruit_blinka.board.stm32.stm32mp157c_dk2 import *
@@ -228,6 +270,15 @@ elif board_id == ap_board.LUBANCAT_IMX6ULL:
 
 elif board_id == ap_board.LUBANCAT_STM32MP157:
     from adafruit_blinka.board.lubancat.lubancat_stm32mp157 import *
+
+elif board_id == ap_board.LUBANCAT_ZERO:
+    from adafruit_blinka.board.lubancat.lubancat_zero import *
+
+elif board_id == ap_board.LUBANCAT1:
+    from adafruit_blinka.board.lubancat.lubancat1 import *
+
+elif board_id == ap_board.LUBANCAT2:
+    from adafruit_blinka.board.lubancat.lubancat2 import *
 
 elif board_id == ap_board.NANOPI_NEO_AIR:
     from adafruit_blinka.board.nanopi.neoair import *
@@ -255,6 +306,21 @@ elif board_id == ap_board.MACROPAD_U2IF:
 
 elif board_id == ap_board.QT2040_TRINKEY_U2IF:
     from adafruit_blinka.board.qt2040_trinkey_u2if import *
+
+elif board_id == ap_board.LICHEE_RV:
+    from adafruit_blinka.board.lichee_rv import *
+
+elif board_id == ap_board.SIEMENS_SIMATIC_IOT2050_ADV:
+    from adafruit_blinka.board.siemens.siemens_iot2050 import *
+
+elif board_id == ap_board.SIEMENS_SIMATIC_IOT2050_BASIC:
+    from adafruit_blinka.board.siemens.siemens_iot2050 import *
+
+elif board_id == ap_board.AML_S905X_CC:
+    from adafruit_blinka.board.librecomputer.aml_s905x_cc_v1 import *
+
+elif board_id == ap_board.GENERIC_LINUX_PC:
+    from adafruit_blinka.board.generic_linux_pc import *
 
 elif "sphinx" in sys.modules:
     pass

@@ -44,6 +44,8 @@ elif chip_id == ap_chip.DRA74X:
     from adafruit_blinka.microcontroller.dra74x import *
 elif chip_id == ap_chip.AM33XX:
     from adafruit_blinka.microcontroller.am335x import *
+elif chip_id == ap_chip.AM65XX:
+    from adafruit_blinka.microcontroller.am65xx import *
 elif chip_id == ap_chip.JH71x0:
     from adafruit_blinka.microcontroller.starfive.JH71x0 import *
 elif chip_id == ap_chip.SUN8I:
@@ -62,12 +64,20 @@ elif chip_id == ap_chip.T186:
     from adafruit_blinka.microcontroller.tegra.t186 import *
 elif chip_id == ap_chip.T194:
     from adafruit_blinka.microcontroller.tegra.t194 import *
+elif chip_id == ap_chip.T234:
+    from adafruit_blinka.microcontroller.tegra.t234 import *
 elif chip_id == ap_chip.S905:
     from adafruit_blinka.microcontroller.amlogic.s905 import *
+elif chip_id == ap_chip.S905X:
+    from adafruit_blinka.microcontroller.amlogic.s905x import *
 elif chip_id == ap_chip.S905X3:
     from adafruit_blinka.microcontroller.amlogic.s905x3 import *
+elif chip_id == ap_chip.S905Y2:
+    from adafruit_blinka.microcontroller.amlogic.s905y2 import *
 elif chip_id == ap_chip.S922X:
     from adafruit_blinka.microcontroller.amlogic.s922x import *
+elif chip_id == ap_chip.A311D:
+    from adafruit_blinka.microcontroller.amlogic.a311d import *
 elif chip_id == ap_chip.EXYNOS5422:
     from adafruit_blinka.microcontroller.samsung.exynos5422 import *
 elif chip_id == ap_chip.APQ8016:
@@ -80,8 +90,16 @@ elif chip_id == ap_chip.RK3308:
     from adafruit_blinka.microcontroller.rockchip.rk3308 import *
 elif chip_id == ap_chip.RK3399:
     from adafruit_blinka.microcontroller.rockchip.rk3399 import *
+elif chip_id == ap_chip.RK3399_T:
+    from adafruit_blinka.microcontroller.rockchip.rk3399_t import *
+elif chip_id == ap_chip.RK3588:
+    from adafruit_blinka.microcontroller.rockchip.rk3588 import *
 elif chip_id == ap_chip.RK3328:
     from adafruit_blinka.microcontroller.rockchip.rk3328 import *
+elif chip_id == ap_chip.RK3566:
+    from adafruit_blinka.microcontroller.rockchip.rk3566 import *
+elif chip_id == ap_chip.RK3568:
+    from adafruit_blinka.microcontroller.rockchip.rk3568 import *
 elif chip_id == ap_chip.H3:
     from adafruit_blinka.microcontroller.allwinner.h3 import *
 elif chip_id == ap_chip.H5:
@@ -108,14 +126,22 @@ elif chip_id == ap_chip.FT2232H:
     from adafruit_blinka.microcontroller.ftdi_mpsse.ft2232h import *
 elif chip_id == ap_chip.PENTIUM_N3710:
     from adafruit_blinka.microcontroller.pentium.n3710 import *
+elif chip_id == ap_chip.ATOM_J4105:
+    from adafruit_blinka.microcontroller.pentium.j4105 import *
 elif chip_id == ap_chip.STM32MP157:
     from adafruit_blinka.microcontroller.stm32.stm32mp157 import *
 elif chip_id == ap_chip.MT8167:
     from adafruit_blinka.microcontroller.mt8167 import *
 elif chip_id == ap_chip.RP2040_U2IF:
     from adafruit_blinka.microcontroller.rp2040_u2if import *
+elif chip_id == ap_chip.D1_RISCV:
+    from adafruit_blinka.microcontroller.allwinner.D1 import *
 elif chip_id == ap_chip.GENERIC_X86:
     print("WARNING: GENERIC_X86 is not fully supported. Some features may not work.")
+elif chip_id is None:
+    print(
+        "WARNING: chip_id == None is not fully supported. Some features may not work."
+    )
 elif "sphinx" in sys.modules:
     pass
 else:

@@ -100,6 +100,12 @@ class I2C(Lockable):
 
             self._i2c = _I2C(scl, sda, frequency=frequency)
             return
+        if detector.board.any_siemens_iot2000:
+            from adafruit_blinka.microcontroller.am65xx.i2c import I2C as _I2C
+
+            self._i2c = _I2C(frequency=frequency)
+            return
+
         if detector.board.any_embedded_linux:
             from adafruit_blinka.microcontroller.generic_linux.i2c import I2C as _I2C
         elif detector.board.ftdi_ft2232h:
@@ -270,6 +276,12 @@ class SPI(Lockable):
             self._spi = _SPI(clock, MOSI, MISO)  # Pins configured on instantiation
             self._pins = (clock, clock, clock)  # These don't matter, they're discarded
             return
+        if detector.board.any_siemens_iot2000:
+            from adafruit_blinka.microcontroller.am65xx.spi import SPI as _SPI
+
+            self._spi = _SPI(clock)  # this is really all that's needed
+            self._pins = (clock, clock, clock)  # will determine MOSI/MISO from clock
+            return
         if detector.board.any_embedded_linux:
             from adafruit_blinka.microcontroller.generic_linux.spi import SPI as _SPI
         elif detector.board.ftdi_ft2232h:
@@ -332,6 +344,9 @@ class SPI(Lockable):
             from adafruit_blinka.microcontroller.rp2040_u2if.spi import SPI_QTPY as _SPI
         elif detector.chip.id == ap_chip.RP2040:
             from adafruit_blinka.microcontroller.rp2040.spi import SPI as _SPI
+        elif detector.board.any_siemens_iot2000:
+            from adafruit_blinka.microcontroller.am65xx.spi import SPI as _SPI
+            from adafruit_blinka.microcontroller.am65xx.pin import Pin
         elif detector.board.any_embedded_linux:
             from adafruit_blinka.microcontroller.generic_linux.spi import SPI as _SPI
         else:
@@ -486,42 +501,9 @@ class UART(Lockable):
         return self._uart.readinto(buf, nbytes)
 
     def readline(self):
-        """Read a line of characters up to a newline charater from the UART"""
+        """Read a line of characters up to a newline character from the UART"""
         return self._uart.readline()
 
     def write(self, buf):
         """Write to the UART from a buffer"""
         return self._uart.write(buf)
-
-
-class OneWire:
-    """
-    Stub class for OneWire, which is currently not implemented
-    """
-
-    def __init__(self, pin):
-        raise NotImplementedError("OneWire has not been implemented")
-
-    def deinit(self):
-        """
-        Deinitialize the OneWire bus and release any hardware resources for reuse.
-        """
-        raise NotImplementedError("OneWire has not been implemented")
-
-    def reset(self):
-        """
-        Reset the OneWire bus and read presence
-        """
-        raise NotImplementedError("OneWire has not been implemented")
-
-    def read_bit(self):
-        """
-        Read in a bit
-        """
-        raise NotImplementedError("OneWire has not been implemented")
-
-    def write_bit(self, value):
-        """
-        Write out a bit based on value.
-        """
-        raise NotImplementedError("OneWire has not been implemented")
